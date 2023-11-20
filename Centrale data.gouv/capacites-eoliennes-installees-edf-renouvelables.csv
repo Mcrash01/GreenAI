@@ -1,0 +1,63 @@
+﻿Tri;Year;Périmètre juridique;Legal perimeter;Périmètre spatial;Spatial perimeter;Filière;Sector;Type d'énergie;Type of energy;Maximum Capacity;Unit;Méthode de consolidation;Consolidation method;Commentaire;Comment
+1;2022;EDF Renouvelables;EDF Renewables;Afrique du Sud;South Africa;Éolien;Wind;Électrique;Electric;145.0;MW;Brute;Raw;;
+2;2022;EDF Renouvelables;EDF Renewables;Allemagne;Germany;Éolien;Wind;Électrique;Electric;176.0;MW;Brute;Raw;;
+3;2022;EDF Renouvelables;EDF Renewables;Arabie saoudite;Saudi Arabia;Éolien;Wind;Électrique;Electric;416.0;MW;Brute;Raw;;
+4;2022;EDF Renouvelables;EDF Renewables;Belgique;Belgium;Éolien;Wind;Électrique;Electric;325.0;MW;Brute;Raw;Il s’agit de mégawatts en éolien offshore exclusivement.;These are megawatts in offshore wind power only.
+5;2022;EDF Renouvelables;EDF Renewables;Brésil;Brazil;Éolien;Wind;Électrique;Electric;709.0;MW;Brute;Raw;;
+6;2022;EDF Renouvelables;EDF Renewables;Canada;Canada;Éolien;Wind;Électrique;Electric;607.0;MW;Brute;Raw;;
+7;2022;EDF Renouvelables;EDF Renewables;Chili;Chile;Éolien;Wind;Électrique;Electric;175.0;MW;Brute;Raw;;
+8;2022;EDF Renouvelables;EDF Renewables;République populaire de Chine;People's Republic of China;Éolien;Wind;Électrique;Electric;905.0;MW;Brute;Raw;;
+9;2022;EDF Renouvelables;EDF Renewables;États-Unis;United States of America;Éolien;Wind;Électrique;Electric;3815.0;MW;Brute;Raw;;
+10;2022;EDF Renouvelables;EDF Renewables;France;France;Éolien;Wind;Électrique;Electric;2328.0;MW;Brute;Raw;;
+11;2022;EDF Renouvelables;EDF Renewables;Grèce;Greece;Éolien;Wind;Électrique;Electric;264.0;MW;Brute;Raw;;
+12;2022;EDF Renouvelables;EDF Renewables;Inde;India;Éolien;Wind;Électrique;Electric;553.0;MW;Brute;Raw;;
+13;2022;EDF Renouvelables;EDF Renewables;Maroc;Morocco;Éolien;Wind;Électrique;Electric;87.0;MW;Brute;Raw;;
+14;2022;EDF Renouvelables;EDF Renewables;Mexique;Mexico;Éolien;Wind;Électrique;Electric;324.0;MW;Brute;Raw;;
+15;2022;EDF Renouvelables;EDF Renewables;Pologne;Poland;Éolien;Wind;Électrique;Electric;68.0;MW;Brute;Raw;;
+16;2022;EDF Renouvelables;EDF Renewables;Royaume-Uni;United Kingdom;Éolien;Wind;Électrique;Electric;632.0;MW;Brute;Raw;;
+17;2022;EDF Renouvelables;EDF Renewables;Afrique du Sud;South Africa;Éolien;Wind;Électrique;Electric;73.0;MW;Nette;Net;;
+18;2022;EDF Renouvelables;EDF Renewables;Allemagne;Germany;Éolien;Wind;Électrique;Electric;174.0;MW;Nette;Net;;
+19;2022;EDF Renouvelables;EDF Renewables;Arabie saoudite;Saudi Arabia;Éolien;Wind;Électrique;Electric;149.0;MW;Nette;Net;;
+20;2022;EDF Renouvelables;EDF Renewables;Belgique;Belgium;Éolien;Wind;Électrique;Electric;27.0;MW;Nette;Net;Il s’agit de mégawatts en éolien offshore exclusivement.;These are megawatts in offshore wind power only.
+21;2022;EDF Renouvelables;EDF Renewables;Brésil;Brazil;Éolien;Wind;Électrique;Electric;526.0;MW;Nette;Net;;
+22;2022;EDF Renouvelables;EDF Renewables;Canada;Canada;Éolien;Wind;Électrique;Electric;542.0;MW;Nette;Net;;
+23;2022;EDF Renouvelables;EDF Renewables;Chili;Chile;Éolien;Wind;Électrique;Electric;88.0;MW;Nette;Net;;
+24;2022;EDF Renouvelables;EDF Renewables;République populaire de Chine;People's Republic of China;Éolien;Wind;Électrique;Electric;380.0;MW;Nette;Net;;
+25;2022;EDF Renouvelables;EDF Renewables;États-Unis;United States of America;Éolien;Wind;Électrique;Electric;3040.0;MW;Nette;Net;;
+26;2022;EDF Renouvelables;EDF Renewables;France;France;Éolien;Wind;Électrique;Electric;1918.0;MW;Nette;Net;;
+27;2022;EDF Renouvelables;EDF Renewables;Grèce;Greece;Éolien;Wind;Électrique;Electric;238.0;MW;Nette;Net;;
+28;2022;EDF Renouvelables;EDF Renewables;Inde;India;Éolien;Wind;Électrique;Electric;432.0;MW;Nette;Net;;
+29;2022;EDF Renouvelables;EDF Renewables;Maroc;Morocco;Éolien;Wind;Électrique;Electric;34.0;MW;Nette;Net;;
+30;2022;EDF Renouvelables;EDF Renewables;Mexique;Mexico;Éolien;Wind;Électrique;Electric;162.0;MW;Nette;Net;;
+31;2022;EDF Renouvelables;EDF Renewables;Pologne;Poland;Éolien;Wind;Électrique;Electric;68.0;MW;Nette;Net;;
+32;2022;EDF Renouvelables;EDF Renewables;Royaume-Uni;United Kingdom;Éolien;Wind;Électrique;Electric;181.0;MW;Nette;Net;;
+33;2021;EDF Renouvelables;EDF Renewables;États-Unis;United States of America;Éolien;Wind;Électrique;Electric;4015.9;MW;Brute;Raw;;
+34;2021;EDF Renouvelables;EDF Renewables;France;France;Éolien;Wind;Électrique;Electric;1808.0;MW;Brute;Raw;;
+35;2021;EDF Renouvelables;EDF Renewables;Canada;Canada;Éolien;Wind;Électrique;Electric;560.2;MW;Brute;Raw;;
+36;2021;EDF Renouvelables;EDF Renewables;Grèce;Greece;Éolien;Wind;Électrique;Electric;264.45;MW;Brute;Raw;;
+37;2021;EDF Renouvelables;EDF Renewables;Mexique;Mexico;Éolien;Wind;Électrique;Electric;324.0;MW;Brute;Raw;;
+38;2021;EDF Renouvelables;EDF Renewables;Royaume-Uni;United Kingdom;Éolien;Wind;Électrique;Electric;602.5;MW;Brute;Raw;;
+39;2021;EDF Renouvelables;EDF Renewables;Allemagne;Germany;Éolien;Wind;Électrique;Electric;175.3;MW;Brute;Raw;;
+40;2021;EDF Renouvelables;EDF Renewables;Pologne;Poland;Éolien;Wind;Électrique;Electric;68.0;MW;Brute;Raw;;
+41;2021;EDF Renouvelables;EDF Renewables;Brésil;Brazil;Éolien;Wind;Électrique;Electric;571.0;MW;Brute;Raw;;
+42;2021;EDF Renouvelables;EDF Renewables;République populaire de Chine;People's Republic of China;Éolien;Wind;Électrique;Electric;905.3;MW;Brute;Raw;;
+43;2021;EDF Renouvelables;EDF Renewables;Inde;India;Éolien;Wind;Électrique;Electric;363.5;MW;Brute;Raw;;
+44;2021;EDF Renouvelables;EDF Renewables;Chili;Chile;Éolien;Wind;Électrique;Electric;175.0;MW;Brute;Raw;;
+45;2021;EDF Renouvelables;EDF Renewables;Afrique du Sud;South Africa;Éolien;Wind;Électrique;Electric;145.1;MW;Brute;Raw;;
+46;2021;EDF Renouvelables;EDF Renewables;Arabie saoudite;Saudi Arabia;Éolien;Wind;Électrique;Electric;416.0;MW;Brute;Raw;;
+47;2021;EDF Renouvelables;EDF Renewables;Belgique;Belgium;Éolien;Wind;Électrique;Electric;325.2;MW;Brute;Raw;Il s’agit de mégawatts en éolien offshore exclusivement.;These are megawatts in offshore wind power only.
+48;2021;EDF Renouvelables;EDF Renewables;États-Unis;United States of America;Éolien;Wind;Électrique;Electric;2943.5;MW;Nette;Net;;
+49;2021;EDF Renouvelables;EDF Renewables;France;France;Éolien;Wind;Électrique;Electric;1637.1000000000001;MW;Nette;Net;;
+50;2021;EDF Renouvelables;EDF Renewables;Canada;Canada;Éolien;Wind;Électrique;Electric;506.2;MW;Nette;Net;;
+51;2021;EDF Renouvelables;EDF Renewables;Grèce;Greece;Éolien;Wind;Électrique;Electric;238.2;MW;Nette;Net;;
+52;2021;EDF Renouvelables;EDF Renewables;Mexique;Mexico;Éolien;Wind;Électrique;Electric;162.0;MW;Nette;Net;;
+53;2021;EDF Renouvelables;EDF Renewables;Royaume-Uni;United Kingdom;Éolien;Wind;Électrique;Electric;167.10000000000002;MW;Nette;Net;;
+54;2021;EDF Renouvelables;EDF Renewables;Allemagne;Germany;Éolien;Wind;Électrique;Electric;173.3;MW;Nette;Net;;
+55;2021;EDF Renouvelables;EDF Renewables;Pologne;Poland;Éolien;Wind;Électrique;Electric;68.0;MW;Nette;Net;;
+56;2021;EDF Renouvelables;EDF Renewables;Brésil;Brazil;Éolien;Wind;Électrique;Electric;479.7;MW;Nette;Net;;
+57;2021;EDF Renouvelables;EDF Renewables;République populaire de Chine;People's Republic of China;Éolien;Wind;Électrique;Electric;379.7;MW;Nette;Net;;
+58;2021;EDF Renouvelables;EDF Renewables;Inde;India;Éolien;Wind;Électrique;Electric;261.6;MW;Nette;Net;;
+59;2021;EDF Renouvelables;EDF Renewables;Chili;Chile;Éolien;Wind;Électrique;Electric;87.5;MW;Nette;Net;;
+60;2021;EDF Renouvelables;EDF Renewables;Afrique du Sud;South Africa;Éolien;Wind;Électrique;Electric;73.1;MW;Nette;Net;;
+61;2021;EDF Renouvelables;EDF Renewables;Arabie saoudite;Saudi Arabia;Éolien;Wind;Électrique;Electric;212.2;MW;Nette;Net;;
+62;2021;EDF Renouvelables;EDF Renewables;Belgique;Belgium;Éolien;Wind;Électrique;Electric;26.9;MW;Nette;Net;Il s’agit de mégawatts en éolien offshore exclusivement.;These are megawatts in offshore wind power only.
