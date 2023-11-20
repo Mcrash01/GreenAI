@@ -4,7 +4,7 @@ import pandas as pd
 data = requests.get("https://data.ffvl.fr/api/?base=terrains&mode=json&key=00000000000000000000000000000000").text
 weather_data = json.loads(data)
 global villedata
-geo_data = pd.read_csv("cities.csv")
+geo_data = pd.read_csv("data/cities.csv")
 print(geo_data)
 def get_department_region(city_name, geo_data):
     # Normalize the city names to lowercase for matching
@@ -79,5 +79,5 @@ energy_scores_df = pd.DataFrame(energy_data_list).drop_duplicates(subset=['city'
 
 # Display the DataFrame (optional)
 print(energy_scores_df)
-energy_scores_df.to_excel("Test.xlsx")
+energy_scores_df.to_excel("results/Test.xlsx")
 
