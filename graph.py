@@ -2,6 +2,7 @@ import ipywidgets as widgets
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+import geopandas as gpd
 from IPython.display import HTML
 from IPython.display import display
 from PIL import Image
@@ -75,9 +76,17 @@ def show_map(graph_data, node_colors=None):
 
     # set the size of the plot
     plt.figure(figsize=(18, 13))
-    # draw the graph (both nodes and edges) with locations from romania_locations
+    # draw the graph (both nodes and edges) with locations from france_locations
     nx.draw(G, pos={k: node_positions[k] for k in G.nodes()},
             node_color=[node_colors[node] for node in G.nodes()], linewidths=0.3, edgecolors='k')
+    
+    # draw french contours
+    try:
+        france_shapefile = gpd.read_file('data/metropole.geojson')
+        print('Drawing french contours')
+        france_shapefile.boundary.plot(ax=plt.gca(), edgecolor='black')
+    except:
+        print('Shapefile not found. No french contours drawn.')
 
     # draw labels for nodes
     node_label_handles = nx.draw_networkx_labels(G, pos=node_label_pos, font_size=14)
@@ -90,12 +99,12 @@ def show_map(graph_data, node_colors=None):
 
     # add a legend
     white_circle = lines.Line2D([], [], color="white", marker='o', markersize=15, markerfacecolor="white")
-    orange_circle = lines.Line2D([], [], color="orange", marker='o', markersize=15, markerfacecolor="orange")
+    # orange_circle = lines.Line2D([], [], color="orange", marker='o', markersize=15, markerfacecolor="orange")
     red_circle = lines.Line2D([], [], color="red", marker='o', markersize=15, markerfacecolor="red")
     gray_circle = lines.Line2D([], [], color="gray", marker='o', markersize=15, markerfacecolor="gray")
     green_circle = lines.Line2D([], [], color="green", marker='o', markersize=15, markerfacecolor="green")
-    plt.legend((white_circle, orange_circle, red_circle, gray_circle, green_circle),
-               ('Un-explored', 'Frontier', 'Currently Exploring', 'Explored', 'Final Solution'),
+    plt.legend((white_circle, red_circle, gray_circle, green_circle),
+               ('No data', 'electricity production deficit', 'Unknown', 'power generation surplus'),
                numpoints=1, prop={'size': 16}, loc=(.8, .75))
 
     # show the plot. No need to use in notebooks. nx.draw will show the graph itself.
