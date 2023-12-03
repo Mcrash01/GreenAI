@@ -72,7 +72,9 @@ def show_map(graph_data, node_colors=None):
     node_colors = node_colors or graph_data['node_colors']
     node_positions = graph_data['node_positions']
     node_label_pos = graph_data['node_label_positions']
+    node_data_pos = graph_data['node_data_positions']
     edge_weights = graph_data['edge_weights']
+    data = graph_data['node_data']
 
     # set the size of the plot
     plt.figure(figsize=(18, 13))
@@ -93,6 +95,14 @@ def show_map(graph_data, node_colors=None):
 
     # add a white bounding box behind the node labels
     [label.set_bbox(dict(facecolor='white', edgecolor='none')) for label in node_label_handles.values()]
+
+    # draw data for nodes (dictionary with 2 keys: 'production' and 'consumption' displayed on 2 lines)
+    formatted_labels = {key: f"production : {value['production']} kWh\nconsumption : {value['consumption']} kWh" for key, value in data.items()}
+    node_data_handles = nx.draw_networkx_labels(G, pos=node_data_pos, labels=formatted_labels, font_size=7)
+
+    # add a white bounding box behind the node data labels
+    [label.set_bbox(dict(facecolor='white', edgecolor='none')) for label in node_data_handles.values()]
+    
 
     # add edge lables to the graph
     nx.draw_networkx_edge_labels(G, pos=node_positions, edge_labels=edge_weights, font_size=14)
