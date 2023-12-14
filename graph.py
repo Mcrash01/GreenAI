@@ -148,7 +148,7 @@ def show_map(graph_data, step=0, node_colors=None, redistribute=False):
                     arrow_start = node_positions[surplus_city]
                     arrow_end = node_positions[path[1]]  # Next city in the shortest path
                     arrow_length = min(0.5, surplus / 500)  # Adjust arrow length based on surplus (scaled for visualization)
-                    arrow_props = dict(facecolor='yellow', edgecolor='yellow', arrowstyle='->', shrinkA=0, shrinkB=0, lw=2)
+                    arrow_props = dict(facecolor='#F5BF03', edgecolor='#F5BF03', arrowstyle='->', shrinkA=0, shrinkB=0, lw=2)
                     plt.annotate("", xytext=arrow_start, xy=arrow_end, arrowprops=arrow_props, size=20)
 
     # add a legend
