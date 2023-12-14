@@ -7,6 +7,7 @@ from IPython.display import HTML
 from IPython.display import display
 from PIL import Image
 from matplotlib import lines
+import heapq
 
 class Graph:
     """A graph connects nodes (vertices) by edges (links). Each edge can also
@@ -67,9 +68,34 @@ def UndirectedGraph(graph_dict=None):
     """Build a Graph where every edge (including future ones) goes both ways."""
     return Graph(graph_dict=graph_dict, directed=False)
 
-def show_map(graph_data, node_colors=None):
+
+def dijkstra_shortest_path(graph, start, end, weight='weight'):
+    """
+    Dijkstra's algorithm to find the shortest path in a weighted graph.
+    """
+    queue = [(0, start, [])]
+    visited = set()
+    
+    while queue:
+        (cost, node, path) = heapq.heappop(queue)
+        if node not in visited:
+            visited.add(node)
+            path = path + [node]
+            
+            if node == end:
+                return path
+            
+            for neighbor, edge_data in graph[node].items():
+                if neighbor not in visited:
+                    heapq.heappush(queue, (cost + edge_data.get(weight, 1), neighbor, path))
+    
+    return []
+
+def show_map(graph_data, step=0, node_colors=None, redistribute=False):
     G = nx.Graph(graph_data['graph_dict'])
-    node_colors = node_colors or graph_data['node_colors']
+    # node color is green if production > consumption, red if consumption > production, white if consumption = production, grey if no data
+    node_colors = {k: 'green' if v['production'][step] > v['consumption'][step] else 'red' if v['production'][step] < v['consumption'][step] else 'white' if v['production'][step] == v['consumption'][step] else 'grey' for k, v in graph_data['node_data'].items()}
+
     node_positions = graph_data['node_positions']
     node_label_pos = graph_data['node_label_positions']
     node_data_pos = graph_data['node_data_positions']
@@ -81,7 +107,7 @@ def show_map(graph_data, node_colors=None):
     # draw the graph (both nodes and edges) with locations from france_locations
     nx.draw(G, pos={k: node_positions[k] for k in G.nodes()},
             node_color=[node_colors[node] for node in G.nodes()], linewidths=0.3, edgecolors='k')
-    
+
     # draw french contours
     try:
         france_shapefile = gpd.read_file('data/metropole.geojson')
@@ -97,19 +123,36 @@ def show_map(graph_data, node_colors=None):
     [label.set_bbox(dict(facecolor='white', edgecolor='none')) for label in node_label_handles.values()]
 
     # draw data for nodes (dictionary with 2 keys: 'production' and 'consumption' displayed on 2 lines)
-    formatted_labels = {key: f"production : {value['production']} kWh\nconsumption : {value['consumption']} kWh" for key, value in data.items()}
+    # use step parameter to display production and consumption for a given step in prediction
+    formatted_labels = {key: f"production : {value['production'][step]}\n consumption : {round(value['consumption'][step])}" for key, value in data.items()}
     node_data_handles = nx.draw_networkx_labels(G, pos=node_data_pos, labels=formatted_labels, font_size=7)
 
     # add a white bounding box behind the node data labels
     [label.set_bbox(dict(facecolor='white', edgecolor='none')) for label in node_data_handles.values()]
-    
 
-    # add edge lables to the graph
+    # add edge labels to the graph
     nx.draw_networkx_edge_labels(G, pos=node_positions, edge_labels=edge_weights, font_size=14)
+
+    # visualize redistribution of surplus electricity with arrows
+    if redistribute:
+        surplus_cities = [city for city in G.nodes() if data[city]['production'][step] > data[city]['consumption'][step]]
+        deficit_cities = [city for city in G.nodes() if data[city]['production'][step] < data[city]['consumption'][step]]
+
+        for surplus_city in surplus_cities:
+            surplus = max(0, data[surplus_city]['production'][step] - data[surplus_city]['consumption'][step])
+
+            for deficit_city in deficit_cities:
+                path = dijkstra_shortest_path(G, surplus_city, deficit_city, weight='weight')
+                
+                if path:
+                    arrow_start = node_positions[surplus_city]
+                    arrow_end = node_positions[path[1]]  # Next city in the shortest path
+                    arrow_length = min(0.5, surplus / 500)  # Adjust arrow length based on surplus (scaled for visualization)
+                    arrow_props = dict(facecolor='yellow', edgecolor='yellow', arrowstyle='->', shrinkA=0, shrinkB=0, lw=2)
+                    plt.annotate("", xytext=arrow_start, xy=arrow_end, arrowprops=arrow_props, size=20)
 
     # add a legend
     white_circle = lines.Line2D([], [], color="white", marker='o', markersize=15, markerfacecolor="white")
-    # orange_circle = lines.Line2D([], [], color="orange", marker='o', markersize=15, markerfacecolor="orange")
     red_circle = lines.Line2D([], [], color="red", marker='o', markersize=15, markerfacecolor="red")
     gray_circle = lines.Line2D([], [], color="gray", marker='o', markersize=15, markerfacecolor="gray")
     green_circle = lines.Line2D([], [], color="green", marker='o', markersize=15, markerfacecolor="green")
@@ -119,3 +162,4 @@ def show_map(graph_data, node_colors=None):
 
     # show the plot. No need to use in notebooks. nx.draw will show the graph itself.
     plt.show()
+
